@@ -8,15 +8,24 @@ using WebApi.OutputCache.Core.Cache;
 
 namespace WebApi.OutputCache.V2
 {
+    /// <summary>
+    /// 缓存输出配置
+    /// </summary>
     public class CacheOutputConfiguration
     {
         private readonly HttpConfiguration _configuration;
 
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="configuration"></param>
         public CacheOutputConfiguration(HttpConfiguration configuration)
         {
             _configuration = configuration;
         }
 
+
+  
         public void RegisterCacheOutputProvider(Func<IApiOutputCache> provider)
         {
             _configuration.Properties.GetOrAdd(typeof(IApiOutputCache), x => provider);
@@ -68,7 +77,16 @@ namespace WebApi.OutputCache.V2
                 : null;
         }
 
-        public ICacheKeyGenerator GetCacheKeyGenerator(HttpRequestMessage request, Type generatorType)
+
+        /// <summary>
+        /// 缓存Key生成 对象
+        /// </summary>
+        /// <param name="request">请求信息对象</param>
+        /// <param name="generatorType">Key</param>
+        /// <returns></returns>
+        public ICacheKeyGenerator GetCacheKeyGenerator(
+            HttpRequestMessage request,
+            Type generatorType)
         {
             generatorType = generatorType ?? typeof (ICacheKeyGenerator);
             object cache;

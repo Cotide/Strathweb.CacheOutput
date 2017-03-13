@@ -65,11 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IgnoreController.cs" />
-    <Compile Include="Teams2Controller.cs" />
+    <Compile Include="Controllers\Extensions\ActionCacheController.cs" />
+    <Compile Include="Controllers\IgnoreController.cs" />
+    <Compile Include="Controllers\Teams2Controller.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Team.cs" />
-    <Compile Include="TeamsController.cs" />
+    <Compile Include="Model\Team.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +87,7 @@
       <Name>WebApi2.OutputCache</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

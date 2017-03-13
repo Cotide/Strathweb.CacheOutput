@@ -18,6 +18,9 @@ using WebApi.OutputCache.Core.Time;
 
 namespace WebApi.OutputCache.V2
 {
+    /// <summary>
+    /// 缓存特性
+    /// </summary>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
     public class CacheOutputAttribute : ActionFilterAttribute
     {
@@ -156,6 +159,10 @@ namespace WebApi.OutputCache.V2
             return responseMediaType;
         }
 
+        /// <summary>
+        /// action before
+        /// </summary>
+        /// <param name="actionContext"></param>
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
             if (actionContext == null) throw new ArgumentNullException("actionContext");
@@ -207,6 +214,12 @@ namespace WebApi.OutputCache.V2
             ApplyCacheHeaders(actionContext.Response, cacheTime);
         }
 
+        /// <summary>
+        /// action after
+        /// </summary>
+        /// <param name="actionExecutedContext"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public override async Task OnActionExecutedAsync(HttpActionExecutedContext actionExecutedContext, CancellationToken cancellationToken)
         {
             if (actionExecutedContext.ActionContext.Response == null || !actionExecutedContext.ActionContext.Response.IsSuccessStatusCode) return;

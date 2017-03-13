@@ -3,9 +3,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebApi.OutputCache.V2.Demo.Model;
 using WebApi.OutputCache.V2.TimeAttributes;
 
-namespace WebApi.OutputCache.V2.Demo
+namespace WebApi.OutputCache.V2.Demo.Controllers
 {
     [AutoInvalidateCacheOutput]
     public class Teams2Controller : ApiController

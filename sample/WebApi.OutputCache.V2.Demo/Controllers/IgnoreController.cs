@@ -1,7 +1,7 @@
 using System;
 using System.Web.Http;
 
-namespace WebApi.OutputCache.V2.Demo
+namespace WebApi.OutputCache.V2.Demo.Controllers
 {
     [CacheOutput(ClientTimeSpan = 50, ServerTimeSpan = 50)]
     [RoutePrefix("ignore")]
