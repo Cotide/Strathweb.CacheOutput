@@ -66,7 +66,7 @@ namespace WebApi.OutputCache.V2
             return callback;
         }
 
-        private string GetValue(object val)
+        protected string GetValue(object val)
         {
             if (val is IEnumerable && !(val is string))
             {

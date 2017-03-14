@@ -42,6 +42,12 @@ namespace WebApi.OutputCache.V2
             RegisterCacheKeyGeneratorProvider(provider);
         }
 
+        /// <summary>
+        /// 制作缓存KEY 
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="action"></param>
+        /// <returns></returns>
         public string MakeBaseCachekey(string controller, string action)
         {
             return string.Format("{0}-{1}", controller.ToLower(), action.ToLower());
@@ -79,7 +85,7 @@ namespace WebApi.OutputCache.V2
 
 
         /// <summary>
-        /// 缓存Key生成 对象
+        /// 创建缓存KEY生成策略 对象
         /// </summary>
         /// <param name="request">请求信息对象</param>
         /// <param name="generatorType">Key</param>

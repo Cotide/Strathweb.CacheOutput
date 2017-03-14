@@ -60,6 +60,7 @@
     <Compile Include="CacheOutputConfiguration.cs" />
     <Compile Include="DefaultCacheKeyGenerator.cs" />
     <Compile Include="Extensions\ActionCacheOutputAttribute.cs" />
+    <Compile Include="Extensions\Key\UserRequestCacheKeyGenerator.cs" />
     <Compile Include="HttpConfigurationExtensions.cs" />
     <Compile Include="ICacheKeyGenerator.cs" />
     <Compile Include="IgnoreCacheOutputAttribute.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="TimeAttributes\CacheOutputUntilToday.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Design\Design.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

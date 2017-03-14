@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="缓存基类特性">
+    <Position X="4.76" Y="0.573" Height="0.268" Width="1.013" />
+  </Comment>
+  <Comment CommentText="缓存处理接口">
+    <Position X="1.104" Y="0.604" Height="0.268" Width="0.971" />
+  </Comment>
+  <Comment CommentText="缓存处理实现">
+    <Position X="1.062" Y="3.229" Height="0.268" Width="0.929" />
+  </Comment>
+  <Comment CommentText="忽略缓存特性">
+    <Position X="3.969" Y="3.24" Height="0.268" Width="0.992" />
+  </Comment>
+  <Comment CommentText="自动忽略缓存特性">
+    <Position X="6.427" Y="3.229" Height="0.268" Width="1.221" />
+  </Comment>
+  <Comment CommentText="缓存特性">
+    <Position X="9.385" Y="3.229" Height="0.268" Width="0.7" />
+  </Comment>
+  <Class Name="WebApi.OutputCache.V2.BaseCacheAttribute">
+    <Position X="4" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseCacheAttribute.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="WebApiCache" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WebApi.OutputCache.V2.AutoInvalidateCacheOutputAttribute">
+    <Position X="3.25" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAIAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>AutoInvalidateCacheOutputAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApi.OutputCache.V2.InvalidateCacheOutputAttribute">
+    <Position X="6" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAQEAAAAA=</HashCode>
+      <FileName>InvalidateCacheOutputAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Web.Http.Filters.ActionFilterAttribute">
+    <Position X="8.5" Y="0.75" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WebApi.OutputCache.Core.Cache.MemoryCacheDefault">
+    <Position X="0.5" Y="3.75" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WebApi.OutputCache.V2.CacheOutputAttribute">
+    <Position X="8.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAQCAAAAAGAEAEAERgAQAYANGAAAAMAQ=</HashCode>
+      <FileName>CacheOutputAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApi.OutputCache.V2.TimeAttributes.CacheOutputUntilAttribute">
+    <Position X="2.25" Y="10.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimeAttributes\CacheOutputUntilCacheAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApi.OutputCache.V2.TimeAttributes.CacheOutputUntilThisMonthAttribute">
+    <Position X="8" Y="10.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimeAttributes\CacheOutputUntilThisMonthAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApi.OutputCache.V2.TimeAttributes.CacheOutputUntilThisYearAttribute">
+    <Position X="5" Y="10.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimeAttributes\CacheOutputUntilThisYearAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApi.OutputCache.V2.TimeAttributes.CacheOutputUntilToday">
+    <Position X="11.25" Y="10.25" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TimeAttributes\CacheOutputUntilToday.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="WebApi.OutputCache.Core.Cache.IApiOutputCache">
+    <Position X="0.5" Y="1" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="WebApi.OutputCache.V2.ICacheKeyGenerator">
+    <Position X="3" Y="6.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICacheKeyGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

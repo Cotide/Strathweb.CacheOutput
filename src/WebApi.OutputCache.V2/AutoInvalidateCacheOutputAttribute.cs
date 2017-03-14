@@ -10,6 +10,9 @@ using System.Web.Http.Filters;
 
 namespace WebApi.OutputCache.V2
 {
+    /// <summary>
+    /// 自动无效缓存特性
+    /// </summary>
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
     public sealed class AutoInvalidateCacheOutputAttribute : BaseCacheAttribute
     {

@@ -92,6 +92,7 @@ namespace WebApi.OutputCache.V2
             _webApiCache = config.CacheOutputConfiguration().GetCacheOutputProvider(req);
         }
 
+   
         internal IModelQuery<DateTime, CacheTime> CacheTimeQuery;
 
         protected virtual bool IsCachingAllowed(HttpActionContext actionContext, bool anonymousOnly)
@@ -117,10 +118,14 @@ namespace WebApi.OutputCache.V2
             if (CacheTimeQuery == null) ResetCacheTimeQuery();
         }
 
+        /// <summary>
+        /// 重置缓存时间
+        /// </summary>
         protected void ResetCacheTimeQuery()
         {
             CacheTimeQuery = new ShortTime( ServerTimeSpan, ClientTimeSpan, _sharedTimeSpan);
         }
+
 
         protected virtual MediaTypeHeaderValue GetExpectedMediaType(HttpConfiguration config, HttpActionContext actionContext)
         {
@@ -178,6 +183,8 @@ namespace WebApi.OutputCache.V2
 
             var responseMediaType = GetExpectedMediaType(config, actionContext);
             actionContext.Request.Properties[CurrentRequestMediaType] = responseMediaType;
+
+            // 生成缓存KEY
             var cachekey = cacheKeyGenerator.MakeCacheKey(actionContext, responseMediaType, ExcludeQueryStringFromCacheKey);
 
             if (!_webApiCache.Contains(cachekey)) return;
@@ -222,6 +229,7 @@ namespace WebApi.OutputCache.V2
         /// <returns></returns>
         public override async Task OnActionExecutedAsync(HttpActionExecutedContext actionExecutedContext, CancellationToken cancellationToken)
         {
+           
             if (actionExecutedContext.ActionContext.Response == null || !actionExecutedContext.ActionContext.Response.IsSuccessStatusCode) return;
 
             if (!IsCachingAllowed(actionExecutedContext.ActionContext, AnonymousOnly)) return;
@@ -244,6 +252,7 @@ namespace WebApi.OutputCache.V2
 
                     if (responseContent != null)
                     {
+                        // 
                         var baseKey = config.MakeBaseCachekey(actionExecutedContext.ActionContext.ControllerContext.ControllerDescriptor.ControllerType.FullName, actionExecutedContext.ActionContext.ActionDescriptor.ActionName);
                         var contentType = responseContent.Headers.ContentType;
                         string etag = actionExecutedContext.Response.Headers.ETag.Tag;
