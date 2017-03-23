@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using System.Web.Http;
 
 namespace WebApi.OutputCache.V2.Demo.Controllers
@@ -16,7 +17,7 @@ namespace WebApi.OutputCache.V2.Demo.Controllers
         [IgnoreCacheOutput]
         [Route("uncached")]
         public string GetUnCached()
-        {
+        {  
             return DateTime.Now.ToString();
         }
     }

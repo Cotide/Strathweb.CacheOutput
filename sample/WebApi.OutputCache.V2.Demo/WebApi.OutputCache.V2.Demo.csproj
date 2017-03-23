@@ -50,6 +50,8 @@
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
       <Private>True</Private>
@@ -65,13 +67,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Formatter\JsonNetFormatter.cs" />
+    <Compile Include="App_Start\Formatter\XmlNetFormatter.cs" />
+    <Compile Include="Controllers\Base\BaseApiController.cs" />
     <Compile Include="Controllers\Extensions\ActionCacheController.cs" />
+    <Compile Include="Controllers\Extensions\UserController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IgnoreController.cs" />
     <Compile Include="Controllers\Teams2Controller.cs" />
+    <Compile Include="Filter\AuthorizationFilterAttribute.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Model\Team.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\IdentityUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
