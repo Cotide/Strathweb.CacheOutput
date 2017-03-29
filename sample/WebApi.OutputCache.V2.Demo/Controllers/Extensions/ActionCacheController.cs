@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Web.Http;
-using System.Web.Http.Controllers;
-using WebApi.OutputCache.V2.Demo.Model;
+using System.Web.Http.Controllers; 
 using WebApi.OutputCache.V2.Extensions;
 
 namespace WebApi.OutputCache.V2.Demo.Controllers.Extensions

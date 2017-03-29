@@ -6,8 +6,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Filters;
 using System.Web.Http.SelfHost;
-using WebApi.OutputCache.Core.Cache;
-using WebApi.OutputCache.V2.Demo.App_Start.Formatter;
+using WebApi.OutputCache.Core.Cache; 
 using WebApi.OutputCache.V2.Demo.Controllers.Extensions;
 using WebApi.OutputCache.V2.Extensions.Key;
 
@@ -31,18 +30,7 @@ namespace WebApi.OutputCache.V2.Demo
                     action= "Index",
                     id = RouteParameter.Optional
                 }
-            );
-
-            //var filter = new AuthorizationFilterAttribute();
-            config.Formatters.Clear();
-            // 注入自定义Json/Xml格式化器规则处理
-            config.Formatters.Insert(0, new JsonNetFormatter());
-            config.Formatters.Insert(1, new XmlNetFormatter());
-            // 根据参数选择 格式化处理
-            config.Formatters[0].AddQueryStringMapping("type","json", "application/json");
-            config.Formatters[1].AddQueryStringMapping("type", "xml", "application/xml");
-
-
+            ); 
 
             // 注册缓存策略
             config.CacheOutputConfiguration().RegisterCacheOutputProvider(() => new MemoryCacheDefault());

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WebApi.OutputCache.V2.Demo.ViewModel
+﻿namespace WebApi.OutputCache.WebAPI.Demo.ViewModel
 {
     /// <summary>
     /// 登录用户信息

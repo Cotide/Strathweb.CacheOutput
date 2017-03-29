@@ -5,7 +5,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace WebApi.OutputCache.V2.Demo.App_Start.Formatter
+namespace WebApi.OutputCache.WebAPI.Demo.Formatter
 {
     /// <summary>
     /// Xml 格式化规则
